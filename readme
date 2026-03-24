@@ -1,543 +1,418 @@
-# Main page purpose #
 
-This is a **romantic greeting / celebration landing page** that shows multiple greeting cards, decorative animations, and a floating draggable video player.
+# 1. Main Landing Page
 
-### Branding / page setup
+## Purpose
 
-* Page title: **“My Heart's Greetings”**
-* Custom favicon using `emoji1.jpg`
-* Uses Google Fonts:
+The main page is a **romantic greeting and celebration landing page** that presents multiple greeting cards, decorative animations, and a floating draggable video player.
+
+## Branding and Setup
+
+* **Page title:** `My Heart's Greetings`
+* **Favicon:** `emoji1.jpg`
+* **Google Fonts:**
 
   * Playfair Display
   * Montserrat
   * Dancing Script
-* Includes external libraries:
+* **External Libraries:**
 
-  * **Three.js**
-  * **Particles.js**
+  * Three.js
+  * Particles.js
 
-### Visual theme
+## Visual Theme
 
-* Soft romantic color palette with pink, blush, gold, and light background tones
-* Elegant typography with script-style heading
-* Overall greeting-card / gift-style design
+* Soft romantic color palette using pink, blush, gold, and light background tones
+* Elegant typography with script-style headings
+* Greeting-card / gift-style presentation
 
-### Header section
+## Header Section
 
-* Main heading: **“For only you”**
-* Subtitle: **“a smalla effort ,by a someone”**
-* Heading and subtitle both use fade-in animation on load
+* **Main heading:** `For only you`
+* **Subtitle:** `a smalla effort ,by a someone`
+* Fade-in animation on load for both heading and subtitle
 
-### Greeting cards section
+## Greeting Cards Section
 
-* Responsive grid layout of cards
-* Cards are shown in a **multi-column layout on desktop**
-* Switches to **single-column layout on smaller screens**
-* Each card contains:
+* Responsive card grid layout
+* Multi-column layout on desktop
+* Single-column layout on smaller screens
+* Each card includes:
 
   * featured image
   * title
-  * subtitle/date-like label
-  * “Open Card” button
-* Whole card is clickable
-* On click, each card opens a new page or site in a new tab
+  * subtitle or date-like label
+  * `Open Card` button
+* Entire card is clickable
+* Clicking a card opens its linked page in a new tab
 
-### Individual card links/features
+## Greeting Card Links
 
-There are 4 visible greeting cards:
+### 1. Ramzan Mubarak
 
-1. **Ramzan Mubarak**
+* **Image:** `pic1.avif`
+* **Link:** `Ramadan.html`
 
-   * image: `pic1.avif`
-   * opens external page: `Ramadan.html`
+### 2. Eid Mubarak
 
-2. **Eid Mubarak**
+* **Image:** `0987.jpeg`
+* **Link:** external Canva page
 
-   * image: `0987.jpeg`
-   * opens external Canva page
+### 3. Eid al-Adha
 
-3. **Eid al-Adha**
+* **Image:** `Eid al-Adha.jpg`
+* **Link:** external HTML page
 
-   * image: `Eid al-Adha.jpg`
-   * opens external HTML page
+### 4. Happy wala birthday
 
-4. **Happy wala birthday**
+* **Image:** `bdy.jpg`
+* **Subtitle:** `for a cute princess`
+* **Link:** `untitled.html`
 
-   * image: `bdy.jpg`
-   * subtitle: “for a cute princess”
-   * opens local page: `untitled.html`
+## Card Styling and Interactions
 
-### Card interactions and styling
-
-* Cards have rounded corners
+* Rounded corners
 * Hover lift effect
-* Hover shadow enhancement
-* Card image has bottom gradient fade overlay
-* Gradient-styled rounded button inside each card
-* Button grows slightly on hover
+* Enhanced hover shadow
+* Bottom gradient fade overlay on images
+* Rounded gradient-style buttons
+* Slight button growth on hover
 
-### Background animation features
+## Background Animation
 
-* Full-screen **particles background**
-* Floating animated heart icons across the screen
-* Hearts are created dynamically with JavaScript
-* Each floating heart gets:
+* Full-screen particles background
+* Floating animated hearts created dynamically with JavaScript
+* Each heart gets random:
 
-  * random size
-  * random horizontal position
-  * random animation delay
-  * random animation duration
+  * size
+  * horizontal position
+  * animation delay
+  * animation duration
 
-### Particles.js interactivity
+## Particles.js Features
 
 * Pink particle theme
-* Particles are interactive:
+* Hover interaction uses **grab**
+* Click interaction uses **push**
+* Linked particle lines enabled
+* Random opacity, size, and movement
+* Retina display support enabled
 
-  * hover effect uses **grab**
-  * click adds particles using **push**
-* Linked particle lines are enabled
-* Random opacity, size, and movement are configured
-* Retina display support is enabled
+## Intro Overlay
 
-### Intro overlay / gate screen
+A full-screen gate screen appears initially and darkens the page.
 
-* A full-screen interaction overlay appears initially
-* Overlay darkens the entire screen
-* It contains:
+It includes:
 
-  * **“Begin the Magic ♥”** button
-  * **“Begin the game ♥”** button inside a link
-* Overlay is intended as the first entry point before showing the media player
+* `Begin the Magic ♥` button
+* `Begin the game ♥` button inside a link
 
-### Game entry feature
+## Game Entry
 
-* “Begin the game ♥” button links to:
+* **Game link:** `https://srj-source.github.io/game2.html/`
 
-  * `https://srj-source.github.io/game2.html/`
-
-### Floating video player
+## Floating Video Player
 
 * Hidden initially
-* Appears after clicking **Begin the Magic ♥**
-* Player includes a video element using:
+* Appears after clicking `Begin the Magic ♥`
+* Uses video file: `videoplayback (1).mp4`
+* Video settings:
 
-  * `videoplayback (1).mp4`
-* Video is:
+  * loop enabled
+  * inline playback enabled
+* Floating mini-player styling:
 
-  * looped
-  * inline-play enabled
-* Styled as a floating mini-player
-* Has pink border and shadow
-* Positioned fixed at the bottom-right initially
+  * pink border
+  * shadow
+  * fixed at bottom-right initially
 
-### Video controls
+## Video Controls
 
-The floating player includes:
+The player includes:
 
-* **Play/Pause button**
-* **Mute/Unmute button**
-* **Close button**
+* Play / Pause
+* Mute / Unmute
+* Close
 
-Behavior:
+### Behavior
 
 * Clicking begin starts video playback
 * If playback succeeds:
 
   * player appears
-  * play/pause shows pause icon
+  * play/pause button shows pause icon
   * unmute button becomes visible
-* Play/pause toggles video playback state
-* Mute button toggles muted state and icon
-* Close button hides player and pauses video
+* Play/pause toggles playback
+* Mute toggles muted state and icon
+* Close hides the player and pauses video
 
-### Draggable media player
+## Draggable Media Player
 
-* Floating video player is **draggable**
-* Works with:
-
-  * mouse dragging
-  * touch dragging
-* Dragging is disabled when clicking control buttons
+* Draggable with mouse
+* Draggable with touch
+* Dragging disabled when control buttons are clicked
 * Cursor changes to grabbing while dragging
-* Supports mobile touch dragging with `touch-action: none`
+* Supports mobile touch interaction with `touch-action: none`
 
-### Footer feature
+## Footer
 
-* Footer text: **“Made with ♥”**
-* Footer link points to:
+* **Text:** `Made with ♥`
+* **Link:** `indexshutdown.html`
 
-  * `indexshutdown.html`
-
-### Animation features
-
-* Fade-in animation for heading/subtitle
-* Floating heart animation
-* Sequential card animation attempt on page load
-
-### Notifications feature
+## Notifications
 
 * Requests browser notification permission
-* If permission is granted, shows a notification:
+* If allowed, shows:
 
-  * title: **“Hello!”**
-  * body: **“miss beauty!”**
-  * icon: `/emoji1.jpg`
+  * **Title:** `Hello!`
+  * **Body:** `miss beauty!`
+  * **Icon:** `/emoji1.jpg`
 
-### Service worker / PWA-related feature
+## Service Worker / PWA Support
 
-* Attempts to register a service worker using:
+Attempts to register:
 
-  * `sw.js`
-* This suggests possible support for:
+* `sw.js`
 
-  * notifications
-  * background features
-  * offline behavior, depending on `sw.js`
+This suggests possible support for:
 
-### Mobile responsiveness
+* notifications
+* background features
+* offline behavior
 
-* Heading font size reduces on smaller screens
-* Subtitle font size reduces on smaller screens
-* Cards collapse into single-column layout on narrow screens
-* Draggable player supports touch devices
+## Mobile Responsiveness
 
-### Technical / implementation notes visible from code
+* Smaller heading and subtitle on mobile
+* Cards collapse into a single column
+* Floating player supports touch devices
 
-* There is a call to `setupMusicToggle()` inside `DOMContentLoaded`, but that function is **not defined in this file**
-* Because of that, it may trigger a JavaScript error unless defined elsewhere
-* Sequential card animation logic sets `card.style.opacity = '0'` inside timeout, which may not behave as intended visually
-* Three.js is loaded, but **not actually used** anywhere in this file
+## Technical Notes
 
-### Summary of major frontend features
+* `setupMusicToggle()` is called inside `DOMContentLoaded`, but is **not defined in this file**
+* Sequential card animation sets `card.style.opacity = '0'` inside a timeout, which may not behave as intended
+* Three.js is loaded but **not used directly**
 
-This page currently includes:
+---
 
-* romantic landing page design
-* greeting card gallery
-* links to multiple celebration pages
-* animated hearts
-* particle background
-* intro overlay
-* floating draggable video player
-* notification permission + popup notification
-* service worker registration
-* footer navigation link
+# 2. Heart-Shaped Memory Matching Game
 
+## Purpose
 
+A **heart-shaped memory card matching game** where players flip image cards and match photo pairs.
 
+## Layout Features
 
-
-
-
-@1
-Here are the features present in this frontend code:
-
-### Main concept
-
-This is a **heart-shaped memory card matching game** where users flip image cards and match photo pairs.
-
-### Layout and UI features
-
-* Full-screen game layout with a **dark black background**
+* Full-screen dark background
 * Centered game board inside a `.game` container
-* Board arranged in a **custom heart shape**
-* Decorative heading text:
+* Custom heart-shaped board layout
+* Decorative heading:
 
-  * “Match the photo pairs”
-* Footer-style ownership/credit text shown at the bottom
-* Hidden **surprise modal/popup** that appears after game completion
-* Close button inside the surprise modal
+  * `Match the photo pairs`
+* Footer-style credit text
+* Hidden surprise modal shown after game completion
 * Restart button in the HUD
 
-### Game board features
+## Game Board
 
-* Grid-based board with **9 columns**
-* Empty grid cells are used to create the **heart-shaped card layout**
-* Card size and spacing are controlled with CSS variables
-* Board is responsive and scales based on viewport size
+* Grid-based layout with **9 columns**
+* Empty cells used to form a heart shape
+* Card size and spacing controlled with CSS variables
+* Responsive layout
 
-### Card features
+## Card Features
 
 * Each card is a button element
-* Cards have:
+* Includes:
 
   * front face
   * back face with image
-* **3D flip animation** using `rotateY(180deg)`
-* Matched cards stay flipped
-* Matched cards get a slightly different shadow style
-* Non-playable empty spaces are inserted where needed for heart design
+* 3D flip animation using `rotateY(180deg)`
+* Matched cards remain flipped
+* Matched cards get different shadow styling
+* Empty spaces are inserted for heart design
 
-### Memory game logic
+## Game Logic
 
 * Images are defined in `pairImages`
-* Each selected image is duplicated automatically to create pairs
+* Each image is duplicated to create a pair
 * Cards are shuffled before rendering
-* User can click cards to flip them
-* Only two cards can be active in one turn
-* If both flipped cards match:
+* Players can flip two cards at a time
+* Matching cards:
 
-  * they become permanently matched
-  * matched pair count increases
-* If they do not match:
+  * stay flipped
+  * increase match count
+* Non-matching cards flip back after a delay
+* Same card cannot be selected twice
+* Matched cards cannot be clicked again
+* Board is locked while checking a turn
 
-  * both cards flip back after a delay
-* Same card cannot be clicked twice as a pair
-* Already matched cards cannot be clicked again
-* Board is temporarily locked while checking a pair
+## HUD / Progress
 
-### Progress tracking / HUD
+* Displays **Moves**
+* Displays **Matches**
+* Updates dynamically
+* Restart resets the full game
 
-* Shows **Moves count**
-* Shows **Matches count**
-* Updates dynamically during gameplay
-* Restart button resets the whole game
+## Completion Surprise
 
-### Surprise / completion feature
+* A hidden modal appears when all pairs are matched
+* Uses fade and visibility transitions
+* Includes a close button
+* Final heading/message area exists but is currently commented out
 
-* When all pairs are matched:
+## Secret Cheat Code
 
-  * a **surprise overlay modal** appears
-* Modal uses fade/visibility transition
-* Close button hides the modal
-* The content area for the final reveal exists, but the heading/message is currently commented out
+* Keyboard sequence: `A`, `B`, `C`
+* Reveals and auto-matches all remaining pairs
+* Runs pair-by-pair with animation
+* Does not run if already active or if the game is complete
 
-### Restart feature
-
-* Clicking **Restart** fully resets:
-
-  * flipped cards
-  * matched cards
-  * moves
-  * matches
-  * cheat state
-  * surprise modal visibility
-* Board is rebuilt with a new shuffled deck
-
-### Cheat / hidden owner feature
-
-* Secret keyboard cheat code: **A, B, C**
-* When pressed in sequence:
-
-  * the game auto-reveals and auto-matches all remaining pairs
-* Cheat animation flips cards one pair at a time
-* Cheat does not run if:
-
-  * already running
-  * game is already complete
-
-### Accessibility-related features
+## Accessibility
 
 * Board has `aria-label="Memory card game board"`
-* Each card has `aria-label="Memory card"`
-* Cards and buttons use semantic button elements
+* Cards have `aria-label="Memory card"`
+* Uses semantic button elements
 
-### Responsive design features
+## Responsive Features
 
-* On screens below 900px:
+### Below 900px
 
-  * card size becomes smaller
-  * side text size adjusts
-  * spacing changes
-* On screens below 640px:
+* Smaller card size
+* Adjusted side text size
+* Reduced spacing
 
-  * body allows vertical scrolling
-  * layout becomes more mobile-friendly
-  * side text becomes static and centered
-  * credit moves into normal flow
+### Below 640px
 
-### Visual styling features
+* Vertical scrolling enabled
+* Mobile-friendly layout
+* Side text becomes centered
+* Credit moves into normal document flow
 
-* Serif typography for main game text
-* Sans-serif typography for HUD and modal text
-* Rounded cards and modal corners
-* Shadows for cards and popup
-* Muted secondary text color support
-* Hover effect on restart button
-* Overlay background darkens screen when modal opens
-
-### Configurable/customizable parts in code
-
-* Developer can change:
-
-  * image list in `pairImages`
-  * heart layout in `heartLayout`
-  * surprise modal message
-  * displayed headings/copy
-* Code checks whether enough image URLs are provided for required pairs
-
-### Current content state
+## Technical Notes
 
 * Right-side heading is commented out
 * Surprise modal message is commented out
-* Only the close button is currently visible in the modal
-* Images are expected as local files like `a1.jpg`, `a2.jpg`, etc.
+* Only the close button is visible in the modal by default
+* Images are expected as local assets such as `a1.jpg`, `a2.jpg`, etc.
 
-@2
-Here are the features present in this frontend file:
+---
 
-### Main page purpose
+# 3. Ramadan Mubarak Gallery Page
 
-This is a **Ramadan Mubarak themed image gallery page** with a festive loader, gallery thumbnails, lightbox viewing, confetti, emoji click effects, music, and decorative Islamic-style visuals.
+## Purpose
 
-### Page setup
+A **Ramadan Mubarak-themed image gallery page** with a festive loader, lightbox, confetti, emoji click effects, music, and decorative visuals.
 
-* Page title: **“Ramadan Mubarak - Image Gallery”**
-* Uses external libraries:
+## Setup
 
-  * **GSAP**
-  * **canvas-confetti**
-  * **Three.js**
-* Uses Google Fonts:
+* **Page title:** `Ramadan Mubarak - Image Gallery`
+* **External Libraries:**
 
-  * **Amiri**
-  * **Poppins**
-* Uses external CSS files:
+  * GSAP
+  * canvas-confetti
+  * Three.js
+* **Google Fonts:**
+
+  * Amiri
+  * Poppins
+* **External CSS:**
 
   * `Emoji animation.css`
   * `heart floatUp.css`
 
-### Loader / opening screen
+## Loader Screen
 
-* Full-screen **GSAP animated loader**
-* Loader includes:
+A full-screen GSAP animated loader includes:
 
-  * moon icon
-  * “Ramadan Mubarak” title
-  * animated bouncing dots
-  * progress bar
-  * changing loading messages
-* Loading messages rotate through:
+* moon icon
+* `Ramadan Mubarak` title
+* animated bouncing dots
+* progress bar
+* rotating loading messages:
 
-  * “Loading blessings...”
-  * “Preparing spiritual journey...”
-  * “Arranging prayers...”
-  * “Almost ready...”
-* Main content is initially hidden until loader completes
-* Loader fades out, then page content fades in
+  * `Loading blessings...`
+  * `Preparing spiritual journey...`
+  * `Arranging prayers...`
+  * `Almost ready...`
 
-### Header section
+Main content remains hidden until loading completes.
 
-* Decorative Ramadan-themed hero header
-* Main heading: **Ramadan Mubarak**
-* Subtitle: **Blessed Month of Fasting, Prayer, and Reflection**
-* Header has:
+## Hero Header
 
-  * gradient background on smaller screens
-  * hero background image (`hero.jpg`) on screens wider than 667px
-* Header includes a decorative moon symbol using CSS `::before`
-* Header entrance animation with `fadeInDown`
+* Main heading: `Ramadan Mubarak`
+* Subtitle: `Blessed Month of Fasting, Prayer, and Reflection`
+* Decorative moon via CSS `::before`
+* Gradient header on small screens
+* `hero.jpg` background on screens wider than 667px
+* Entrance animation with `fadeInDown`
 
-### Star-related feature
+## Stars Feature
 
-* `#stars-container` exists inside the header
-* Styling for clickable/twinkling stars is defined
-* Stars have:
+* `#stars-container` exists in the header
+* Stars support:
 
   * twinkling animation
-  * hover scale effect
-  * pointer cursor
-* Actual star creation/behavior likely comes from external JS (`star-msg.js`)
+  * hover scaling
+  * pointer interaction
+* Star behavior likely handled in external script `star-msg.js`
 
-### Gallery section
+## Gallery
 
-* Flexbox image gallery layout
-* Thumbnails wrap responsively
-* Uniform image card size:
+* Responsive flexbox layout
+* Thumbnail size: `200px × 200px`
+* Rounded corners and shadows
+* Hover scale effect
+* Golden glowing hover shadow
 
-  * 200px × 200px
-* Rounded corners and shadow styling
-* Hover effect:
+## Gallery Content
 
-  * image card scales up
-  * glowing golden shadow appears
+Includes **30 day-based items**:
 
-### Gallery content
+* `A1.jpg` to `A30.gif`
 
-* 30 day-based gallery items are included:
+### Final Item
 
-  * `A1.jpg` to `A30.gif`
-* Mixed file formats:
+* `A30.gif` is wrapped in a link to an external Canva page
 
-  * JPG
-  * GIF
-* `alt` attributes use day labels such as Day1, Day2, etc.
+## Lightbox
 
-### Special final gallery item
-
-* The Day30 image (`A30.gif`) is wrapped in a link
-* Clicking that image can navigate to an external Canva page
-
-### Lightbox feature
-
-* Hidden fullscreen **lightbox modal**
-* Opens over a dark patterned background using `ramadan-pattern.png`
-* Contains:
+* Fullscreen modal viewer
+* Dark patterned background using `ramadan-pattern.png`
+* Includes:
 
   * close button
   * enlarged image
-  * caption area
-* Lightbox image has:
+  * caption
+* Image effects:
 
   * zoom-in animation
-  * glowing animated border
-  * multicolor shimmering effect
-  * changing shadow glow
-* Close button changes color on hover
+  * glowing border
+  * shimmer effect
+  * animated shadow glow
 
-### Footer
+## Music
 
-* Footer text: **“All rights reserved by suraj kr 😅.”**
-* Gradient footer styling with gold text and glow effect
+* Background audio: `Aaa1.mp3`
+* Loop enabled
+* After loader:
 
-### Background color and decorative scripting
+  * volume set to `0.5`
+  * autoplay attempted
+* If blocked, failure is logged in console
 
-External scripts suggest more features handled outside this file:
+## Click Effects
 
-* `backgroundcolor.js`
-* `function createHeart.js`
-* `security.js`
-* `Lightbox functionality.js`
-* `audio.js`
-* `star-msg.js`
-* `p.message.js`
+### Confetti
 
-From filenames, this page likely also supports:
-
-* dynamic background changes
-* heart effects
-* security restrictions
-* separate lightbox logic
-* extra audio behavior
-* star messages
-* custom message display
-
-### Music feature
-
-* Background audio element with loop enabled
-* Audio source:
-
-  * `Aaa1.mp3`
-* After loader completes:
-
-  * volume is set to 0.5
-  * autoplay is attempted
-* If autoplay is blocked, it logs a message in console
-
-### Confetti interaction
-
-* Clicking anywhere on the page triggers **confetti**
-* Confetti appears from the clicked position
+* Clicking anywhere triggers confetti
 * Uses:
 
   * 100 particles
   * spread of 70
 
-### Emoji click animation
+### Floating Emojis
 
-* Clicking anywhere also creates floating emoji effects
-* 3 emojis are generated per click
-* Emojis are randomly selected from:
+* 3 emojis appear per click
+* Randomly selected from:
 
   * ❤️
   * 💖
@@ -547,417 +422,201 @@ From filenames, this page likely also supports:
   * 💞
   * 🥰
   * 🌸
-* Emoji placement is randomized around click position
-* Emoji animation duration is randomized
-* Emojis are removed automatically after 2 seconds
+* Randomized placement and animation duration
+* Removed automatically after 2 seconds
 
-### Animation details
+## Decorative Dynamic Elements
 
-* Loader dots bounce continuously
-* Loader progress bar animates smoothly with GSAP
-* Loader exit is animated
-* Main content fades in with staggered opacity animation
-* Gallery items have hover scaling
-* Lightbox image has zoom and glow animations
-* Twinkling stars animation is defined
-* Moon glow animation is defined
+The page includes placeholders for:
 
-### Responsive features
+* `#love-message`
+* `#stars-container`
+* `#hearts`
 
-* Header background switches to a hero image on larger screens
-* Gallery uses wrapping layout so it adjusts to screen width
-* Lightbox image scales within viewport using:
+External scripts suggest support for:
 
-  * max-width: 90%
-  * max-height: 80vh
+* dynamic background color
+* heart generation
+* lightbox behavior
+* audio handling
+* security restrictions
+* star messages
+* custom messages
 
-### DOM elements prepared for dynamic content
+## Technical Notes
 
-* `#love-message` placeholder exists
-* `#stars-container` placeholder exists
-* `#hearts` container exists
-  These suggest additional dynamic content from external JS files
-
-### Technical notes
-
-* Three.js is loaded, but not used directly inside this file
-* Lightbox interaction logic is not written inline; it appears to depend on `Lightbox functionality.js`
-* Several core effects depend on external files, so some behavior is only implied, not fully visible here
-
-### Summary of major frontend features
-
-This page includes:
-
-* Ramadan-themed animated loader
-* festive hero section
-* 30-image/gif gallery
-* lightbox image viewer
-* confetti on click
-* floating emoji reactions on click
-* autoplay background music attempt
-* decorative stars, moon, hearts, and dynamic placeholders
-* responsive festive presentation
-
-@3
-Here are the features visible from these **two Canva-exported frontend pages**.
+* Three.js is loaded but not used directly in this file
+* Lightbox logic depends on external script `Lightbox functionality.js`
+* Several effects are implied through external JavaScript files
 
 ---
 
-## 1) `cc03` — Pink Beautiful Eid Al-Fitr Watercolor Card
+# 4. Canva Exported Eid Pages
 
-### Main purpose
+## 4.1 `cc03` — Pink Beautiful Eid Al-Fitr Watercolor Card
 
-This is an **Eid Al-Fitr greeting card / interactive card page** exported from Canva.
+### Purpose
 
-### Core page type
+A **Canva-exported Eid Al-Fitr greeting card page** acting as an interactive entry page.
 
-* Canva-exported single-page site
-* Root app rendered inside `#root`
-* Uses Canva runtime, vendor, strings, and locale scripts
-* Locale set to **en-IN**
+### Features
 
-### Theme and visual style
-
-* Light theme
-* Watercolor / floral / decorative card style
-* White main background
-* Pink-highlighted clickable instruction text
-* Mixed decorative media:
+* Single-page Canva site
+* Rendered inside `#root`
+* Locale: `en-IN`
+* Light watercolor / floral card style
+* White background with pink-highlighted clickable text
+* Mixed media:
 
   * raster images
-  * sticker/gif animation
+  * sticker/GIF animation
   * vector sticker animation
-  * embedded video asset
+  * embedded video
 
-### Visible text/content features
+### Visible Text
 
-The page includes these visible text blocks:
+* `HAPPY`
+* `Eid Al Fitr`
+* `May Allah bless us. Have a joyful Eid Al Fitr !`
+* `cliCk on any item`
 
-* **HAPPY**
-* **Eid Al Fitr**
-* **May Allah bless us. Have a joyful Eid Al Fitr !**
-* **cliCk on any item**
+### Interaction
 
-### Text styling features
+Multiple elements link to:
 
-* Large decorative title styling
-* Underlined text on several text elements
-* Uppercase styling for some headings
-* Center-aligned text
-* Pink neon-style emphasis on the “click on any item” instruction
-* Multiple custom fonts loaded from Canva assets
+* `https://aaaaaaajhsjsfwjgw.my.canva.site/cv02`
 
-### Clickable/interactable content
+This makes the page an interactive entry point into the second Canva page.
 
-A major visible feature is that several elements are linked to another page:
+### Other Features
 
-* multiple text elements link to:
-
-  * `https://aaaaaaajhsjsfwjgw.my.canva.site/cv02`
-* decorative/video/media layers also appear to be linked to the same destination
-* this means the card behaves like an **interactive entry page** leading into the second page
-
-### Media features
-
-The exported config shows several media elements:
-
-* Raster image assets
-* GIF/sticker content
-* Vector sticker animation content (`json` animation files)
-* MP4 video asset
-* HLS manifest for video playback
-* Poster frames / thumbnails for animated media
-
-### Animation/media behavior implied
-
-Because Canva exports these media objects, the page likely contains:
-
-* animated decorative stickers
-* animated visual overlay elements
-* short embedded motion/video content
-* auto-rendered motion graphics from Canva JSON/vector assets
-
-### Instructional feature
-
-* A prominent instruction tells the user to **click on any item**
-* This strongly suggests the page is meant to be explored through clickable decorative objects
-
-### Security / protection behavior
-
-* Right-click/context menu is blocked on media elements such as:
-
-  * images
-  * video
-  * svg
-  * picture
-* This is intended to discourage saving/downloading media directly
-
-### Footer/legal framework
-
-* Dynamic Canva footer installation support exists
-* Includes modal logic for:
-
-  * terms/support
-  * privacy policy
-  * reporting
-* Footer content is fetched dynamically based on browser language
-
-### Technical/platform features
-
-* Canva bootstrap configuration included inline
-* Supports theme switching using `prefers-color-scheme`
-* Uses reCAPTCHA configuration
-* Loads runtime/assets through preloaded scripts and styles
-* Uses exported asset bundles, font bundles, and localized strings
-
-### Practical feature summary for `cc03`
-
-This page functions as:
-
-* an **interactive Eid greeting card**
-* a **decorative multimedia landing card**
-* a **click-through bridge page** leading users into another Canva page (`cv02`)
+* Decorative animated stickers
+* Video and motion graphics
+* Right-click disabled on media elements
+* Dynamic Canva footer and policy modal support
+* Theme switching via `prefers-color-scheme`
+* reCAPTCHA configuration included
 
 ---
 
-## 2) `cv02` — Destination Wedding Website in Pale Yellow Light Floral Style
+## 4.2 `cv02` — Romantic Personalized Message Page
 
-### Main purpose
+### Purpose
 
-This is a **Canva-exported personal message / romantic themed page** built from a wedding-style template and customized with personal text.
+A **Canva-exported romantic dedication page** styled like a wedding-themed floral site.
 
-### Core page type
+### Design
 
-* Canva-exported multi-section site
-* Root rendered inside `#root`
-* Locale set to **en-IN**
-* Uses Canva runtime and asset bundles
-
-### Overall design/theme
-
-* Pale yellow / floral / elegant aesthetic
-* Soft romantic styling
+* Pale yellow / floral / elegant theme
 * Light background palette
-* Decorative botanical/wedding-template visuals
-* Feminine / elegant typography
+* Decorative botanical visuals
+* Mixed script and serif typography
 
-### Sections/pages present
+### Sections
 
-The embedded page data shows at least these named sections:
+* `Home`
+* `Our Story`
+* `RSVP`
 
-* **Home**
-* **Our Story**
-* **RSVP**
+### Home Section
 
-So this is structured like a multi-section landing page.
+Includes text such as:
 
-### Home section features
+* `Hello my noor`
+* `Miss`
+* `Saiba arshad`
+* `31 march`
+* `This is all, a small effort, by your cute friend`
 
-The Home section includes personalized text such as:
+### Our Story Section
 
-* **Hello my noor**
-* **Miss**
-* **Saiba arshad**
-* **31 march**
-* **This is all, a small effort, by your cute friend**
+Includes personalized emotional text:
 
-This indicates the page acts as a **personal dedication / greeting page**.
+* `I know I am not best,`
+* `but I daily to become perfect`
+* `at least, good for u`
 
-### Home section visual features
+### RSVP Section
 
-* Floral or decorative background imagery
-* Large personalized title text
-* Date display
-* Supporting personal note
-* Horizontal decorative divider line
-* Decorative image placements around the text
+Used more like a closing love note with:
 
-### Our Story section features
+* `With all my love`
 
-The “Our Story” section includes:
+### Shared Canva Features
 
-* decorative imagery on both sides
-* personalized message text:
+* Right-click protection on media
+* Dynamic footer and privacy modal support
+* reCAPTCHA configuration
+* Theme responsiveness
+* Structured multi-section rendering
 
-  * **I know I am not best,**
-  * **but I daily to become perfect**
-  * **at least, good for u**
+## Combined Experience
 
-This section functions like a **personal emotional message block**.
+Together:
 
-### RSVP section features
-
-The RSVP section includes:
-
-* styled background area
-* central message:
-
-  * **With all my love**
-
-Although the section name is RSVP, based on this customization it seems to be used more as a **final love-note section** than a real RSVP form.
-
-### Media features
-
-The page includes multiple raster image assets:
-
-* floral/background images
-* decorative portrait-like or framed visuals
-* section background imagery
-
-No custom form elements are visible in the provided code dump, so RSVP appears to be more visual/textual than interactive here.
-
-### Typography features
-
-Several custom Canva fonts are loaded, including:
-
-* script font styles
-* serif-style display fonts
-* elegant body text fonts
-
-Text styling includes:
-
-* uppercase headings
-* centered alignment
-* decorative letter spacing
-* mixed script + serif combinations
-
-### Color/style system
-
-Canva theme config indicates:
-
-* light cream / pale yellow background
-* dark muted green/charcoal accent text
-* elegant floral template palette
-
-### Security / protection behavior
-
-Like the first page:
-
-* right-click is blocked on media elements
-* dynamic Canva footer support exists
-* privacy/terms modal support exists
-* reCAPTCHA config is present
-
-### Technical features
-
-* Theme responds to dark/light preference logic
-* Canva runtime handles rendering
-* Images are served in multiple resolutions
-* Uses structured sections/pages internally
-* Exported as a full Canva website
-
-### Practical feature summary for `cv02`
-
-This page functions as:
-
-* a **romantic personalized message website**
-* a **multi-section dedication page**
-* a floral-style page with:
-
-  * greeting/introduction
-  * emotional message/story section
-  * closing “with all my love” section
+* `cc03` acts as a clickable Eid greeting card
+* `cv02` acts as the main romantic dedication page
 
 ---
 
-# Combined feature summary of both pages
+# 5. Eid al-Adha Greeting Page
 
-Together, these two Canva pages create a flow like this:
+## Purpose
 
-### Page flow
+An **Eid al-Adha greeting message page** with romantic visuals and an interactive animated particle background.
 
-* `cc03` acts like an **Eid greeting / clickable opening card**
-* it encourages the visitor to click items
-* clicking leads to `cv02`
-* `cv02` works like the **main personalized emotional message page**
+## Setup
 
-### Shared platform features
-
-Both pages include:
-
-* Canva-exported website structure
-* multilingual/localized setup
-* theme detection
-* protected media right-click blocking
-* Canva footer/privacy/report modal support
-* custom font loading
-* responsive asset delivery
-
-### Experience style
-
-Together they provide:
-
-* festive greeting experience
-* interactive click-through card
-* romantic/personal dedication page
-* decorative multimedia and floral design aesthetic
-
-
-@4  Here are the features present in this frontend file:
-
-### Main page purpose
-
-This is an **Eid al-Adha greeting message page** with animated romantic/festive visuals and an interactive particle background.
-
-### Page setup
-
-* Page title: **“Eid Mubarak!🌙❤️”**
-* Uses Google Fonts:
+* **Page title:** `Eid Mubarak!🌙❤️`
+* **Google Fonts:**
 
   * Dancing Script
   * Poppins
 
-### Overall design/theme
+## Design
 
 * Full-screen greeting page
 * Dark romantic gradient background
-* Centered glassmorphism-style message card
-* Soft red, pink, and white festive color palette
-* Mobile-friendly centered layout
+* Centered glassmorphism message card
+* Soft red, pink, and white palette
 
-### Main greeting content
+## Greeting Content
 
 * Main heading:
 
-  * **“Eid Mubarak, My Love! 🌙”**
-* Long personalized Eid message/blessing paragraph
-* Additional short blessing line
-* Signature line:
+  * `Eid Mubarak, My Love! 🌙`
+* Personalized message paragraph
+* Extra blessing line
+* Signature:
 
-  * **“Forever Yours,”**
-* Extra note shown in a `<pre>` block:
+  * `Forever Yours,`
+* Additional note in a `<pre>` block:
 
-  * “i even don't know you read ,this message or not .still i writting this”
+  * `i even don't know you read ,this message or not .still i writting this`
 
-### Message card features
+## Visual Elements
+
+### Message Card
 
 * Semi-transparent dark background
-* Blur/glass effect using `backdrop-filter`
+* Blur effect with `backdrop-filter`
 * Rounded corners
-* Shadowed card design
-* Border with low-opacity white tint
-* Animated entrance using scale + fade-in
+* Shadow
+* Light border tint
+* Animated scale + fade entrance
 
-### Decorative visual elements
+### Moon Decoration
 
-* **Moon decoration** positioned near the message card
-* Moon uses:
+* Radial gradient moon
+* Glow effect
+* Fade-in animation
+* Floating motion
 
-  * radial gradient
-  * glow effect
-  * fade-in animation
-  * floating animation
-* CSS exists for a **mosque decorative element**, though no `.mosque` element is actually present in the HTML
+### Particle Canvas Background
 
-### Canvas animation background
-
-* Fullscreen fixed canvas behind the content
-* Animated floating particles continuously rendered
-* Particle system includes:
-
-  * hearts
-  * stars
-* Particles drift across the screen with random:
+* Fullscreen fixed canvas
+* Animated hearts and stars
+* Randomized:
 
   * position
   * size
@@ -965,9 +624,7 @@ This is an **Eid al-Adha greeting message page** with animated romantic/festive 
   * color
   * rotation
 
-### Particle colors
-
-The particle system uses soft romantic/light colors:
+### Particle Colors
 
 * `#ff6b6b`
 * `#ffa3a3`
@@ -975,507 +632,162 @@ The particle system uses soft romantic/light colors:
 * `#f8f9fa`
 * `#fff`
 
-### Click interaction effect
+## Click Interaction
 
-* Clicking on the canvas creates **burst particles**
-* Each click spawns 10 extra animated particles
-* These click particles:
+* Clicking the canvas creates burst particles
+* 10 additional particles per click
+* Click particles move outward and fade away
 
-  * appear at click position
-  * move outward in random directions
-  * fade out over time
-* Effect feels like falling petals / stars / celebratory spark burst
+## Responsive Features
 
-### Animation features
+### On screens 768px and above
 
-* Message card fades and scales in on load
-* Moon fades in and then floats gently
-* Signature has continuous pulse animation
-* Background particles animate continuously
-* Click particles animate and disappear gradually
+* Larger heading
+* Larger paragraph text
+* Increased card padding
+* Larger moon
+* Larger signature
+* Larger `<pre>` text
 
-### Responsive features
+## Technical Notes
 
-* Mobile-first layout with padding around content
-* On screens `768px+`:
-
-  * heading becomes larger
-  * paragraph text becomes larger
-  * message card padding increases
-  * moon becomes larger
-  * signature text becomes larger
-  * `<pre>` text becomes larger
-
-### Interaction features
-
-* Whole page uses pointer cursor
-* Canvas is clickable for particle burst effects
-* Touch interaction optimized with:
-
-  * `touch-action: manipulation`
-
-### Technical notes visible from code
-
-* Canvas resizes automatically when window size changes
-* Particle background persists with animation loop using `requestAnimationFrame`
-* In the animation loop, normal particles are updated once, but click particles are effectively updated twice per frame because `update()` is called once before draw and again during removal check
-* CSS for `.hidden-message` and `.hearts-btn` exists, but those elements are not present in the HTML
-* CSS for `.mosque` exists, but no mosque element is rendered
-
-### Summary of major frontend features
-
-This page currently includes:
-
-* personalized Eid greeting page
-* glass-style message card
-* decorative glowing moon
-* animated heart/star canvas background
-* click-based particle burst effect
-* responsive typography and layout
-* romantic/festive message presentation
-
-@5
-Here are the features present in these frontend files:
+* Canvas resizes with the window
+* Animation runs with `requestAnimationFrame`
+* Click particles are effectively updated twice per frame
+* CSS exists for `.hidden-message`, `.hearts-btn`, and `.mosque`, but those elements are not present in the HTML
 
 ---
 
-## 1) `instruction` page
+# 6. Additional Birthday and Romantic Pages
 
-### Main purpose
+## 6.1 `instruction` Page
 
-This page looks like a **minimal entry/instruction shell page** that loads its real UI and behavior from external files.
+### Purpose
 
-### Features visible in this HTML
+A minimal shell page that loads its UI and behavior through external files.
 
-* Page title: **instruction**
-* External stylesheet loaded:
+### Features
+
+* **Page title:** `instruction`
+* Loads:
 
   * `untitled.css`
-* External script loaded:
-
   * `untitled.js`
-
-### Content structure
-
-* The `<body>` contains no visible UI elements
-* No buttons, text blocks, forms, cards, images, or sections are directly present in this HTML
-
-### External dependency behavior
-
-Because the page is almost empty, its actual features likely come from:
-
-* `untitled.css`
-* `untitled.js`
-
-So from this file alone, the visible feature is:
-
-* a blank shell page prepared for external rendering/styling
-
-### Extra note
-
-* The body contains many repeated HTML comments warning people not to use inspect/console
-* These comments are not user-facing features, but they show an attempt to discourage source inspection
+* No visible UI in the HTML body
+* Includes repeated comments discouraging inspect/console use
 
 ---
 
-## 2) `Happy Birthday BUDDHU!!! :)` page
+## 6.2 Animated Birthday Surprise Page
 
-### Main purpose
+### Purpose
 
-This is a **highly animated birthday surprise page** with sequenced storytelling, hearts, confetti, balloons, photo reveal, and a game link.
+A **story-driven animated birthday page** with hearts, confetti, balloons, photo reveal, and a game link.
 
-### Page setup
+### Setup
 
-* Page title: **Happy Birthday BUDDHU!!! :)**
-* Uses Google Fonts:
+* **Page title:** `Happy Birthday BUDDHU!!! :)`
+* **Google Fonts:**
 
   * Work Sans
   * Dancing Script
-* Uses favicon:
+* **Favicon:** `emoji1.jpg`
+* Uses GSAP / TweenMax
 
-  * `emoji1.jpg`
-* Uses GSAP/TweenMax for animation timeline
+### Features
 
-### Overall design/theme
-
-* Full-screen birthday presentation
-* Soft pastel gradient background
-* Romantic/cute visual style
-* Hidden container that becomes visible when animation starts
-
-### Intro/message sequence
-
-The page is designed as a **story-driven animation sequence** with multiple stages:
-
-#### Stage 1
-
-* Greeting text:
-
-  * “Hey”
-  * “Miss Arshad, my princess”
-* Supporting line:
-
-  * “I really adore your name, just like I adore you!”
-
-#### Stage 2
-
-* Message:
-
-  * “It's your special day!!! ✨”
-
-#### Stage 3
-
-* A text box styled like a message card appears
-* Birthday message shown inside
-* Fake action button:
-
-  * **Send Love**
-
-#### Stage 4 onward
-
-A sequence of animated thought/message lines appears:
-
-* “That's what I was going to say.”
-* “But then I thought...”
-* “You deserve something more extraordinary.”
-* “Because...”
-* “You're Absolutely Amazing :)”
-* Large animated word:
-
-  * **SPECIAL**
-
-### Character-by-character text reveal
-
-* The birthday chat message is split into spans
-* It is revealed letter-by-letter during the timeline
-* The final birthday heading is also split and animated letter-by-letter
-
-### Photo reveal section
-
-* Large featured image:
+* Full-screen pastel gradient background
+* Sequenced greeting and storytelling animations
+* Character-by-character text reveal
+* Photo reveal:
 
   * `IMG_20240813_213351 1.jpg`
-* Styled with:
-
-  * rounded corners
-  * white border
-  * shadow
-* Birthday hat image placed over the photo:
+* Birthday hat overlay:
 
   * `hat.svg`
-* Hat has wobble animation
+* Main heading:
 
-### Main birthday wish section
+  * `Happy Birthday SAIBA!`
+* Supporting line:
 
-* Heading:
-
-  * **Happy Birthday SAIBA!**
-* Supporting wish:
-
-  * “May all your dreams come true and your year be filled with happiness!”
-
-### Balloon decoration section
-
-* Large number of balloon SVGs used as floating decorative elements
-* Balloon images:
+  * `May all your dreams come true and your year be filled with happiness!`
+* Balloon animations using:
 
   * `ballon1.svg`
   * `ballon2.svg`
   * `ballon3.svg`
-* Balloons animate upward during the sequence
-* Balloon hover effect slightly enlarges them
-
-### Decorative burst circles
-
-* Section with multiple SVG circles
-* These are animated as expanding celebratory pulse effects
-
-### Ending section
-
-* Final message:
-
-  * “I hope this little surprise made you smile! You deserve the world.”
-* Game CTA link:
-
-  * **“lets come with me ,play a game {click on me}”**
-* Link points to:
+* Final CTA link:
 
   * `https://srj-source.github.io/gameplay2/`
-* Final smiley shown:
-
-  * `:)`
-
-### Replay feature
-
-* Replay button exists:
-
-  * `#replay`
-* It is currently styled with `visibility: hidden`
-* JS includes replay logic to restart the animation timeline and confetti
-* So replay functionality exists in code, but is not currently visible to users unless changed elsewhere
-
-### Floating hearts feature
-
-* Decorative floating heart emojis are generated dynamically
-* Hearts:
-
-  * appear in random positions
-  * vary in size
-  * float using animation
-  * have randomized duration and delay
-
-### Confetti feature
-
-* Confetti pieces are created dynamically
-* Triggered at the end of the animation sequence
-* Uses multiple pastel/celebratory colors
-* Confetti falls from above and is removed after animation
-
-### Animation system
-
-The page uses a long GSAP timeline to orchestrate:
-
-* fade-ins
-* fade-outs
-* scaling
-* text reveals
-* letter-by-letter animation
-* balloon movement
-* photo entrance
-* hat entrance
-* final wish animation
-* decorative pulse bursts
-* ending reveal
-
-### Responsive features
-
-* Smaller screens adjust:
-
-  * container width
-  * text box width
-  * fake button position
-  * huge word letter size
-  * hat size and positioning
-  * final wish font size
-  * final paragraph sizes
-
-### Visual styling features
-
-* script typography for special headings
-* gradient text styling
-* pastel red/pink palette
-* drop shadows
-* rounded buttons and message cards
-* hover effects on buttons and balloons
-
-### Summary of major features
-
-This page includes:
-
-* animated birthday storytelling
-* sequential text reveal
-* floating hearts
-* confetti celebration
-* photo + hat reveal
-* balloon animations
-* final birthday message
-* external game link
-* hidden replay logic
+* Floating heart generation
+* Confetti celebration at the end
+* Replay logic exists but replay button is hidden
 
 ---
 
-## 3) legacy interactive birthday page with bulbs, cake, balloons, and step buttons
+## 6.3 Legacy Interactive Birthday Celebration Page
 
-### Main purpose
+### Purpose
 
-This is an **interactive step-by-step birthday celebration page** where the user advances through a sequence using buttons.
+A **step-by-step birthday experience** guided by buttons.
 
-### Page setup
+### Setup
 
-* Page title: **Happy Birthday**
+* **Page title:** `Happy Birthday`
 * Uses:
 
   * Bootstrap 3
   * jQuery
   * Less.js
-  * external stylesheet: `stylesheet.css`
-  * external script: `effect.js`
-* Includes Google Analytics script
-* Audio file:
+  * `stylesheet.css`
+  * `effect.js`
+* Includes Google Analytics
+* Audio:
 
   * `hbd.mp3`
 
-### Loading screen
+### Features
 
-* Fullscreen loading spinner overlay shown at start
-* Dark background overlay during loading
-* Spinner rotates continuously
+* Loading spinner overlay
+* Guided progression buttons:
 
-### Audio feature
-
-* Hidden audio player with looping birthday music
-* Music source:
-
-  * `hbd.mp3`
-* “Play Music” button exists as part of the guided experience
-
-### Main interactive flow
-
-The page has a **button-driven progression system** in a fixed bottom navbar.
-
-Buttons include:
-
-* **Turn On Lights**
-* **Play Music**
-* **Let's Decorate**
-* **Fly With Balloons**
-* **Most Delicious Cake Ever**
-* **Light Candle**
-* **Happy Birthday**
-* **A mesage for you**
-
-These buttons appear to guide the user through a staged celebration flow.
-
-### Decorative light bulbs
-
-* Six bulb holders across the top
-* Bulb colors:
-
-  * yellow
-  * red
-  * blue
-  * green
-  * pink
-  * orange
-* Bulbs have glow animations
-* Separate “before” and “after” glow states exist
-* After-states blink continuously
-
-### Background decoration feature
-
-* Clicking **Let’s Decorate** adds a `decorated` class to the body
-* Decorated state uses:
-
-  * `back.webp` as fullscreen background image
-* Smooth background transition is supported
-
-### Banner feature
-
+  * `Turn On Lights`
+  * `Play Music`
+  * `Let's Decorate`
+  * `Fly With Balloons`
+  * `Most Delicious Cake Ever`
+  * `Light Candle`
+  * `Happy Birthday`
+  * `A mesage for you`
+* Hidden looping music player
+* Decorative glowing bulbs
+* Background decoration mode using `back.webp`
 * Banner image:
 
   * `banner.png`
-* Banner has entrance animation (`bannar-come`)
-* Drops in from the top with rotational movement
-
-### Cake feature
-
-* Cake section rendered with HTML/CSS structure
-* Includes:
-
-  * cake body
-  * frosting
-  * candle section
-  * animated flame elements (`fuego`)
-* Intended to appear during the celebration sequence
-
-### Candle feature
-
-* Dedicated button:
-
-  * **Light Candle**
-* Implies candle/fire activation as part of the sequence
-
-### Balloon features
-
-* Multiple balloon elements fixed on screen:
-
-  * `b1` to `b7`
-* Each balloon uses different balloon image assets:
-
-  * `b1.png` to `b6.png`
-* Balloons have floating/rotating behavior classes
-* There is also a balloon border image across the top:
-
-  * `Balloon-Border.png`
-
-### Balloon click navigation
-
-* Each main balloon is wrapped in a link to:
+* Cake and candle sequence
+* Balloon decorations and linked navigation
+* Story/message section revealed in stages
+* Balloons link to:
 
   * `last.html`
-* Message text also tells the user:
 
-  * **click on balloons**
-* So balloons act as both decoration and navigation
+### Technical Notes
 
-### Message/story section
-
-* Hidden message section contains a long birthday narrative shown line-by-line
-* Text includes:
-
-  * “Today is...”
-  * “another year has gone”
-  * “Let's make it... the best celebration ever”
-  * “I made all this... as a birthday present to you”
-  * “a very happy birthday SAIBA ARSHAD .”
-  * “click on balloons”
-
-### Step-by-step experience structure
-
-The page is built like a guided celebration journey:
-
-1. turn on lights
-2. play music
-3. decorate
-4. fly balloons
-5. show cake
-6. light candles
-7. show birthday wish
-8. show message/story
-9. direct user to click balloons
-
-### Visual style
-
-* Starts on black background
-* Later can switch to decorated full-background mode
-* Glowing colored bulbs create festive atmosphere
-* Cake, balloons, banner, and staged text create a party scene
-
-### Technical notes
-
-* Much of the real sequence logic appears to be in `effect.js`
-* Less stylesheet `cake.less` is loaded for cake styling
-* Bootstrap layout is used for rows/columns
-* There is a small typo in CSS:
-
-  * `}o` appears near keyframes section
-* Several buttons are initially hidden and likely shown progressively
-
-### Summary of major features
-
-This page includes:
-
-* loading spinner
-* staged interactive birthday progression
-* music
-* decorative glowing lights
-* decoration/background mode
-* animated banner
-* cake and candle sequence
-* balloons with navigation
-* step-by-step message reveal
+* Much of the sequence logic is handled in `effect.js`
+* There is a small typo in CSS near keyframes: `}o`
 
 ---
 
-## 4) “The Code of Love” / heart canvas card page
+## 6.4 “The Code of Love” Page
 
-### Main purpose
+### Purpose
 
-This is a **romantic love-letter style interactive page** with typed text, animated heart canvas, elapsed-time counter logic, autoplay audio, and a downloadable image button.
+A **romantic love-letter themed page** with typed code-style text, animated heart canvas, audio, and a downloadable image action.
 
-### Page setup
+### Setup
 
-* Page title: **card**
+* **Page title:** `card`
 * Loads:
 
   * Font Awesome
@@ -1483,144 +795,42 @@ This is a **romantic love-letter style interactive page** with typed text, anima
   * `jquery.js`
   * `garden.js`
   * `functions.js`
-* Custom font face:
+* Custom font:
 
   * `digit` from `digital-7_mono.ttf`
 
-### Audio feature
+### Features
 
-* Autoplay audio on page load
-* Music source:
+* Autoplay audio:
 
   * `goodby.mp3`
+* Split layout:
 
-### Main layout
-
-* Main wrapper:
-
-  * `#mainDiv`
-* Main content split into two visual areas:
-
-  * left/code message area
-  * right heart/canvas visual area
-
-### Love-letter / code-style text section
-
-The left section shows a stylized text block that looks like code/comments:
-
-* “THE CODE OF LOVE”
-* “Hey Saiba !”
-* “Do you remember the day we first met?”
-* “Since that day a spark begun;”
-* “Your everything got imprinted in my heart;”
-* “Journey from Infatuation to Love;”
-* “Saiba, I will love you forever;”
-* more personal closing lines
-
-### Typewriter effect
-
-* The code/message area uses:
+  * left code-message area
+  * right heart/canvas area
+* Typewriter text reveal using:
 
   * `$("#code").typewriter();`
-* So the text is revealed with a **typewriter animation**
-
-### Heart download feature
-
-* A heart icon button exists inside `#heartspan`
-* Clicking it runs `downloadImage()`
-* It triggers download of:
+* Download button triggers:
 
   * `Screenshot 2025-06-23 9.11.33 PM.png`
-* Download filename is set as:
+* Download filename set to:
 
   * `filename.jpg`
-
-### Heart/canvas visual section
-
-* Right side contains:
+* Heart canvas animation inside:
 
   * `#loveHeart`
-  * canvas with id `garden`
-* This strongly indicates an animated heart/garden drawing effect handled by external scripts
+  * `#garden`
+* Personalized text includes:
 
-### Love message display
-
-Inside the heart area:
-
-* name display:
-
-  * **MISS SAIBA ARSHAD**
-* main message:
-
-  * **I LOVE YOU SO MUCH**
-* signature:
-
-  * **- STUPID**
-
-### Relationship timer / elapsed time feature
-
-* A `Date` object named `together` is initialized to:
+  * `MISS SAIBA ARSHAD`
+  * `I LOVE YOU SO MUCH`
+  * `- STUPID`
+* Live elapsed-time counter starts from:
 
   * September 5, 2016 at 16:30:00
-* `timeElapse(together)` is called every 500 ms
-* This means the page likely shows a **live relationship/love duration counter**
-
-### Heart animation timing
-
-* `startHeartAnimation()` is triggered after 5 seconds
-* This suggests delayed heart bloom/particle animation after the intro begins
-
-### Browser support fallback
-
-* Checks whether canvas is supported
-* If canvas is unsupported:
-
-  * shows error message
-  * hides code block
-  * stops execution
-* So it has basic compatibility fallback behavior
-
-### Layout behavior
-
-* `adjustCodePosition()` is called
-* Suggests responsive/recalculated placement of the code block relative to heart animation
-
-### Visual/interaction style
-
-* Romantic “programmer love letter” concept
-* Code/comment-themed text styling
-* Animated heart visual
-* Timed love counter
-* Music + download action
-* Combination of emotional message and interactive canvas art
-
-### Summary of major features
-
-This page includes:
-
-* autoplay background audio
-* typewriter love letter
-* animated heart canvas area
-* live elapsed-time love counter logic
-* heart button for image download
-* personalized romantic message display
-* canvas fallback handling
+* Heart animation starts after 5 seconds
+* Includes canvas support fallback logic
 
 ---
-
-# Combined summary for this batch
-
-These files add these major feature groups to your website:
-
-### New feature groups added
-
-* blank external-script entry page
-* animated birthday storytelling page
-* step-by-step birthday celebration page
-* romantic code-love card page
-* heart download action
-* love timer logic
-* balloon-based navigation
-* interactive guided celebration buttons
-* autoplay music and decorative party effects
 
