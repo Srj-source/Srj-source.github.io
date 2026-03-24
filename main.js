@@ -34,7 +34,7 @@ controls.enableDamping = true;
 const loader = new GLTFLoader();
 
 loader.load(
-  "model.glb",
+  "./model.glb",
   (gltf) => {
     const model = gltf.scene;
     scene.add(model);
