@@ -3,18 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GLB Model Website</title>
+  <title>3D GLB Website</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #111;
     }
+
+    #info {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      color: white;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    #buttons {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
     canvas {
       display: block;
     }
   </style>
 </head>
 <body>
-  <script type="module" src="./main.js"></script>
+  <div id="info">
+    Drag = rotate<br>
+    Scroll = zoom<br>
+    Replace <b>model.glb</b> with your file name if needed
+  </div>
+
+  <div id="buttons">
+    <button id="rotateBtn">Auto Rotate</button>
+    <button id="stopBtn">Stop</button>
+    <button id="resetBtn">Reset View</button>
+  </div>
+
+  <script type="module">
+    import * as THREE from "https://unpkg.com/three@0.165.0/build/three.module.js";
+    import { OrbitControls } from "https://unpkg.com/three@0.165.0/examples/jsm/controls/OrbitControls.js";
+    import { GLTFLoader } from "https://unpkg.com/three@0.165.0/examples/jsm/loaders/GLTFLoader.js";
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x111111);
+
+    const camera = new THREE.PerspectiveCamera(
+      60,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    camera.position.set(0, 1.5, 4);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    document.body.appendChild(renderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(5, 10, 7);
+    scene.add(directionalLight);
+
+    const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1.2);
+    directionalLight2.position.set(-5, 5, -5);
+    scene.add(directionalLight2);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.autoRotate = false;
+    controls.autoRotateSpeed = 2.0;
+    controls.target.set(0, 1, 0);
+
+    let model;
+
+    const loader = new GLTFLoader();
+    loader.load(
+      "./model.glb", // change this if your file has another name
+      (gltf) => {
+        model = gltf.scene;
+        scene.add(model);
+
+        const box = new THREE.Box3().setFromObject(model);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+
+        model.position.x -= center.x;
+        model.position.y -= center.y;
+        model.position.z -= center.z;
+
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 2 / maxDim;
+        model.scale.setScalar(scale);
+
+        controls.target.set(0, 0, 0);
+        camera.position.set(0, 1, 4);
+        controls.update();
+      },
+      (xhr) => {
+        if (xhr.total) {
+          console.log("Loading:", ((xhr.loaded / xhr.total) * 100).toFixed(1) + "%");
+        }
+      },
+      (error) => {
+        console.error("GLB load error:", error);
+        alert("Could not load model.glb. Check the file name and use Live Server.");
+      }
+    );
+
+    document.getElementById("rotateBtn").addEventListener("click", () => {
+      controls.autoRotate = true;
+    });
+
+    document.getElementById("stopBtn").addEventListener("click", () => {
+      controls.autoRotate = false;
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      camera.position.set(0, 1, 4);
+      controls.target.set(0, 0, 0);
+      controls.update();
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
 </body>
 </html>
