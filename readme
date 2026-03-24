@@ -1,0 +1,226 @@
+# Main page purpose #
+
+This is a **romantic greeting / celebration landing page** that shows multiple greeting cards, decorative animations, and a floating draggable video player.
+
+### Branding / page setup
+
+* Page title: **“My Heart's Greetings”**
+* Custom favicon using `emoji1.jpg`
+* Uses Google Fonts:
+
+  * Playfair Display
+  * Montserrat
+  * Dancing Script
+* Includes external libraries:
+
+  * **Three.js**
+  * **Particles.js**
+
+### Visual theme
+
+* Soft romantic color palette with pink, blush, gold, and light background tones
+* Elegant typography with script-style heading
+* Overall greeting-card / gift-style design
+
+### Header section
+
+* Main heading: **“For only you”**
+* Subtitle: **“a smalla effort ,by a someone”**
+* Heading and subtitle both use fade-in animation on load
+
+### Greeting cards section
+
+* Responsive grid layout of cards
+* Cards are shown in a **multi-column layout on desktop**
+* Switches to **single-column layout on smaller screens**
+* Each card contains:
+
+  * featured image
+  * title
+  * subtitle/date-like label
+  * “Open Card” button
+* Whole card is clickable
+* On click, each card opens a new page or site in a new tab
+
+### Individual card links/features
+
+There are 4 visible greeting cards:
+
+1. **Ramzan Mubarak**
+
+   * image: `pic1.avif`
+   * opens external page: `Ramadan.html`
+
+2. **Eid Mubarak**
+
+   * image: `0987.jpeg`
+   * opens external Canva page
+
+3. **Eid al-Adha**
+
+   * image: `Eid al-Adha.jpg`
+   * opens external HTML page
+
+4. **Happy wala birthday**
+
+   * image: `bdy.jpg`
+   * subtitle: “for a cute princess”
+   * opens local page: `untitled.html`
+
+### Card interactions and styling
+
+* Cards have rounded corners
+* Hover lift effect
+* Hover shadow enhancement
+* Card image has bottom gradient fade overlay
+* Gradient-styled rounded button inside each card
+* Button grows slightly on hover
+
+### Background animation features
+
+* Full-screen **particles background**
+* Floating animated heart icons across the screen
+* Hearts are created dynamically with JavaScript
+* Each floating heart gets:
+
+  * random size
+  * random horizontal position
+  * random animation delay
+  * random animation duration
+
+### Particles.js interactivity
+
+* Pink particle theme
+* Particles are interactive:
+
+  * hover effect uses **grab**
+  * click adds particles using **push**
+* Linked particle lines are enabled
+* Random opacity, size, and movement are configured
+* Retina display support is enabled
+
+### Intro overlay / gate screen
+
+* A full-screen interaction overlay appears initially
+* Overlay darkens the entire screen
+* It contains:
+
+  * **“Begin the Magic ♥”** button
+  * **“Begin the game ♥”** button inside a link
+* Overlay is intended as the first entry point before showing the media player
+
+### Game entry feature
+
+* “Begin the game ♥” button links to:
+
+  * `https://srj-source.github.io/game2.html/`
+
+### Floating video player
+
+* Hidden initially
+* Appears after clicking **Begin the Magic ♥**
+* Player includes a video element using:
+
+  * `videoplayback (1).mp4`
+* Video is:
+
+  * looped
+  * inline-play enabled
+* Styled as a floating mini-player
+* Has pink border and shadow
+* Positioned fixed at the bottom-right initially
+
+### Video controls
+
+The floating player includes:
+
+* **Play/Pause button**
+* **Mute/Unmute button**
+* **Close button**
+
+Behavior:
+
+* Clicking begin starts video playback
+* If playback succeeds:
+
+  * player appears
+  * play/pause shows pause icon
+  * unmute button becomes visible
+* Play/pause toggles video playback state
+* Mute button toggles muted state and icon
+* Close button hides player and pauses video
+
+### Draggable media player
+
+* Floating video player is **draggable**
+* Works with:
+
+  * mouse dragging
+  * touch dragging
+* Dragging is disabled when clicking control buttons
+* Cursor changes to grabbing while dragging
+* Supports mobile touch dragging with `touch-action: none`
+
+### Footer feature
+
+* Footer text: **“Made with ♥”**
+* Footer link points to:
+
+  * `indexshutdown.html`
+
+### Animation features
+
+* Fade-in animation for heading/subtitle
+* Floating heart animation
+* Sequential card animation attempt on page load
+
+### Notifications feature
+
+* Requests browser notification permission
+* If permission is granted, shows a notification:
+
+  * title: **“Hello!”**
+  * body: **“miss beauty!”**
+  * icon: `/emoji1.jpg`
+
+### Service worker / PWA-related feature
+
+* Attempts to register a service worker using:
+
+  * `sw.js`
+* This suggests possible support for:
+
+  * notifications
+  * background features
+  * offline behavior, depending on `sw.js`
+
+### Mobile responsiveness
+
+* Heading font size reduces on smaller screens
+* Subtitle font size reduces on smaller screens
+* Cards collapse into single-column layout on narrow screens
+* Draggable player supports touch devices
+
+### Technical / implementation notes visible from code
+
+* There is a call to `setupMusicToggle()` inside `DOMContentLoaded`, but that function is **not defined in this file**
+* Because of that, it may trigger a JavaScript error unless defined elsewhere
+* Sequential card animation logic sets `card.style.opacity = '0'` inside timeout, which may not behave as intended visually
+* Three.js is loaded, but **not actually used** anywhere in this file
+
+### Summary of major frontend features
+
+This page currently includes:
+
+* romantic landing page design
+* greeting card gallery
+* links to multiple celebration pages
+* animated hearts
+* particle background
+* intro overlay
+* floating draggable video player
+* notification permission + popup notification
+* service worker registration
+* footer navigation link
+
+Send the next frontend file.
