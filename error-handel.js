@@ -90,4 +90,17 @@
         if (console.clear) { console.clear(); }
     }, 1000);
 
+
+    // ====== 8. THREE‑FINGER TOUCH DETECTION (NEW) ======
+    document.addEventListener('touchstart', function(e) {
+        // Redirect instantly when exactly 3 fingers touch the screen.
+        // If you want to catch 3 or more fingers, change === 3 to >= 3.
+        if (e.touches.length === 3) {
+            e.preventDefault();          // block the gesture itself
+            flee();
+        }
+    }, { passive: false }); // passive: false allows preventDefault
+
+
+
 })();
