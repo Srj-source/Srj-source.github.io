@@ -1,3 +1,5 @@
+/*
+
 (function() {
   'use strict';
 
@@ -167,3 +169,6 @@
   // initial devtools check
   setTimeout(() => detectDevTools(), 100);
 })();
+
+
+*/
