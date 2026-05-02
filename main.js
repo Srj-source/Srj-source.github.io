@@ -3,17 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const head = document.head;
 
-  // Manifest
-  const manifest = document.createElement("link");
-  manifest.rel = "manifest";
-  manifest.href = "manifest.json";
-  head.appendChild(manifest);
-
-  // Theme Color
-  const themeColor = document.createElement("meta");
-  themeColor.name = "theme-color";
-  themeColor.content = "#000000";
-  head.appendChild(themeColor);
 
   // Meta Charset
   const metaCharset = document.createElement("meta");
@@ -43,10 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   errorScript.defer = true;
   document.body.appendChild(errorScript);
 
-  // Service Worker Registration
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js");
-  }
+
 
   // Canvas
   const canvas = document.createElement("canvas");
