@@ -1,0 +1,94 @@
+// main.js
+
+// ---------- HEAD ----------
+document.head.innerHTML = `
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SRJ SOURCE</title>
+`;
+
+
+// ---------- BODY ----------
+document.body.innerHTML = `
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      width:100vw;
+      height:100vh;
+      overflow:hidden;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-family:Arial, sans-serif;
+      background:#ffffff;
+    }
+
+    .fullscreen-link{
+      width:100vw;
+      height:100vh;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-decoration:none;
+    }
+
+    @keyframes shake{
+      0%{
+        transform:translate(2px, 2px);
+      }
+
+      25%{
+        transform:translate(-2px, 2px);
+      }
+
+      50%{
+        transform:translate(2px, -2px);
+      }
+
+      75%{
+        transform:translate(-2px, -2px);
+      }
+
+      100%{
+        transform:translate(0, 0);
+      }
+    }
+
+    h1{
+      margin:0 0 10px;
+      color:#000000;
+      animation:shake 0.2s infinite;
+    }
+
+    img{
+      max-width:90%;
+      height:auto;
+    }
+  </style>
+
+  <a class="fullscreen-link" href="wdfghiuygtfdsedrftghj">
+
+    <h1>SRJ SOURCE</h1>
+
+    <img
+      src="0f9c4c48971121f55c463a45d66c25e1.gif"
+      alt="Song Image"
+      width="500"
+    >
+
+  </a>
+
+  <audio id="bg-music" loop>
+    <source src="drmn.mp3" type="audio/mpeg">
+  </audio>
+`;
