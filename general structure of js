@@ -10,3 +10,639 @@ document.head.innerHTML = `
 document.body.innerHTML = `
   ############################
 `;
+
+
+
+
+You already linked your JavaScript file correctly:
+
+```html
+<script src="main.js" defer></script>
+```
+
+Now here’s the full structure and how to control everything from `main.js`.
+
+# Basic HTML Structure
+
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Website</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS File -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <h1 id="heading">Hello</h1>
+
+    <p class="text">Welcome to my website</p>
+
+</body>
+</html>
+```
+
+---
+
+# Folder Structure
+
+```text
+project/
+│
+├── index.html
+├── style.css
+└── main.js
+```
+
+---
+
+# 1. Change `<title>` using JavaScript
+
+Inside `main.js`
+
+```js
+document.title = "New Website Title";
+```
+
+---
+
+# 2. Add Elements to `<body>`
+
+```js
+const para = document.createElement("p");
+
+para.textContent = "This paragraph was added by JavaScript";
+
+document.body.appendChild(para);
+```
+
+---
+
+# 3. Add HTML Inside Body
+
+```js
+document.body.innerHTML += `
+    <div>
+        <h2>New Section</h2>
+        <p>Added from JS</p>
+    </div>
+`;
+```
+
+---
+
+# 4. Access and Change Existing Elements
+
+HTML:
+
+```html
+<h1 id="heading">Hello</h1>
+```
+
+JS:
+
+```js
+const heading = document.getElementById("heading");
+
+heading.textContent = "Changed by JavaScript";
+```
+
+---
+
+# 5. Add CSS File Dynamically
+
+```js
+const css = document.createElement("link");
+
+css.rel = "stylesheet";
+css.href = "style.css";
+
+document.head.appendChild(css);
+```
+
+---
+
+# 6. Add CSS Directly from JS
+
+```js
+document.body.style.backgroundColor = "black";
+document.body.style.color = "white";
+```
+
+---
+
+# 7. Add New JS File Dynamically
+
+```js
+const script = document.createElement("script");
+
+script.src = "extra.js";
+
+document.body.appendChild(script);
+```
+
+---
+
+# 8. Add Anything Inside `<head>`
+
+```js
+const meta = document.createElement("meta");
+
+meta.name = "description";
+meta.content = "My website description";
+
+document.head.appendChild(meta);
+```
+
+---
+
+# 9. Full Example (`main.js`)
+
+```js
+// Change title
+document.title = "JavaScript Website";
+
+// Create heading
+const h1 = document.createElement("h1");
+h1.textContent = "Created from JavaScript";
+
+// Add style
+h1.style.color = "blue";
+
+// Add to body
+document.body.appendChild(h1);
+
+// Create paragraph
+const p = document.createElement("p");
+p.textContent = "This paragraph was also created using JS.";
+
+document.body.appendChild(p);
+```
+
+---
+
+# Important Concepts
+
+| Part              | Meaning                  |
+| ----------------- | ------------------------ |
+| `document.head`   | Controls `<head>`        |
+| `document.body`   | Controls `<body>`        |
+| `createElement()` | Creates new HTML element |
+| `appendChild()`   | Adds element to page     |
+| `textContent`     | Changes text             |
+| `innerHTML`       | Adds HTML                |
+| `style`           | Adds CSS                 |
+
+---
+
+# Best Practice
+
+Usually:
+
+* HTML → structure
+* CSS → design
+* JS → functionality
+
+Example:
+
+```html
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+```
+
+This is the standard method used in real websites.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   1. CHANGE WEBSITE TITLE
+========================================================= */
+
+document.title = "Advanced JavaScript Notes";
+
+
+/* =========================================================
+   2. SELECT ELEMENTS
+========================================================= */
+
+// Select by ID
+const box = document.getElementById("box");
+
+// Select first matching element
+const title = document.querySelector(".title");
+
+// Select all matching elements
+const items = document.querySelectorAll(".item");
+
+console.log(items);
+
+
+/* =========================================================
+   3. CHANGE TEXT
+========================================================= */
+
+title.textContent = "New Text Content";
+
+// Allows HTML tags
+title.innerHTML = "<span style='color:red'>Red Text</span>";
+
+
+/* =========================================================
+   4. CREATE ELEMENTS
+========================================================= */
+
+const para = document.createElement("p");
+
+para.textContent = "Created using createElement()";
+
+document.body.appendChild(para);
+
+
+/* =========================================================
+   5. ADD HTML INSIDE BODY
+========================================================= */
+
+document.body.innerHTML += `
+    <section class="card">
+        <h2>Dynamic Section</h2>
+        <p>Added from JavaScript</p>
+    </section>
+`;
+
+
+/* =========================================================
+   6. ADD CSS USING JAVASCRIPT
+========================================================= */
+
+para.style.color = "blue";
+para.style.fontSize = "25px";
+para.style.backgroundColor = "black";
+para.style.padding = "10px";
+
+
+/* =========================================================
+   7. ADD / REMOVE CLASSES
+========================================================= */
+
+para.classList.add("active");
+
+para.classList.remove("active");
+
+para.classList.toggle("dark-mode");
+
+
+/* =========================================================
+   8. CHANGE ATTRIBUTES
+========================================================= */
+
+const image = document.createElement("img");
+
+image.src = "photo.jpg";
+
+image.alt = "Nature Image";
+
+image.width = 300;
+
+document.body.appendChild(image);
+
+
+/* =========================================================
+   9. CREATE BUTTON
+========================================================= */
+
+const btn = document.createElement("button");
+
+btn.textContent = "Click Me";
+
+document.body.appendChild(btn);
+
+
+/* =========================================================
+   10. BUTTON CLICK EVENT
+========================================================= */
+
+btn.addEventListener("click", () => {
+
+    alert("Button Clicked!");
+
+});
+
+
+/* =========================================================
+   11. MOUSE EVENTS
+========================================================= */
+
+btn.addEventListener("mouseenter", () => {
+
+    btn.style.backgroundColor = "red";
+
+});
+
+btn.addEventListener("mouseleave", () => {
+
+    btn.style.backgroundColor = "";
+
+});
+
+
+/* =========================================================
+   12. KEYBOARD EVENTS
+========================================================= */
+
+document.addEventListener("keydown", (event) => {
+
+    console.log("Key Pressed:", event.key);
+
+});
+
+
+/* =========================================================
+   13. INPUT VALUE
+========================================================= */
+
+const input = document.createElement("input");
+
+input.placeholder = "Type something";
+
+document.body.appendChild(input);
+
+input.addEventListener("input", () => {
+
+    console.log(input.value);
+
+});
+
+
+/* =========================================================
+   14. LOOP THROUGH ELEMENTS
+========================================================= */
+
+// Example HTML:
+// <li class="item">One</li>
+// <li class="item">Two</li>
+
+const allItems = document.querySelectorAll(".item");
+
+allItems.forEach((item, index) => {
+
+    item.textContent = `Item ${index + 1}`;
+
+});
+
+
+/* =========================================================
+   15. REMOVE ELEMENT
+========================================================= */
+
+setTimeout(() => {
+
+    para.remove();
+
+}, 5000);
+
+
+/* =========================================================
+   16. APPEND MULTIPLE ELEMENTS
+========================================================= */
+
+const div = document.createElement("div");
+
+const h1 = document.createElement("h1");
+
+const p = document.createElement("p");
+
+h1.textContent = "Heading";
+
+p.textContent = "Paragraph";
+
+div.append(h1, p);
+
+document.body.appendChild(div);
+
+
+/* =========================================================
+   17. ADD CSS FILE DYNAMICALLY
+========================================================= */
+
+const css = document.createElement("link");
+
+css.rel = "stylesheet";
+
+css.href = "style.css";
+
+document.head.appendChild(css);
+
+
+/* =========================================================
+   18. ADD JS FILE DYNAMICALLY
+========================================================= */
+
+const script = document.createElement("script");
+
+script.src = "extra.js";
+
+document.body.appendChild(script);
+
+
+/* =========================================================
+   19. DARK MODE TOGGLE
+========================================================= */
+
+const darkBtn = document.createElement("button");
+
+darkBtn.textContent = "Toggle Dark Mode";
+
+document.body.appendChild(darkBtn);
+
+darkBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+});
+
+
+/* =========================================================
+   20. LOCAL STORAGE
+========================================================= */
+
+// Save data
+localStorage.setItem("username", "Aman");
+
+// Get data
+const user = localStorage.getItem("username");
+
+console.log(user);
+
+// Remove data
+localStorage.removeItem("username");
+
+
+/* =========================================================
+   21. TIMER
+========================================================= */
+
+setTimeout(() => {
+
+    console.log("Runs once after 2 seconds");
+
+}, 2000);
+
+
+setInterval(() => {
+
+    console.log("Runs every 1 second");
+
+}, 1000);
+
+
+/* =========================================================
+   22. FETCH API
+========================================================= */
+
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+    });
+
+
+/* =========================================================
+   23. FORM SUBMIT
+========================================================= */
+
+const form = document.createElement("form");
+
+form.innerHTML = `
+    <input type="text" placeholder="Name">
+    <button>Submit</button>
+`;
+
+document.body.appendChild(form);
+
+form.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    alert("Form Submitted");
+
+});
+
+
+/* =========================================================
+   24. SCROLL EVENT
+========================================================= */
+
+window.addEventListener("scroll", () => {
+
+    console.log(window.scrollY);
+
+});
+
+
+/* =========================================================
+   25. WINDOW SIZE
+========================================================= */
+
+window.addEventListener("resize", () => {
+
+    console.log(window.innerWidth);
+
+});
+
+
+/* =========================================================
+   26. DATE & TIME
+========================================================= */
+
+const now = new Date();
+
+console.log(now);
+
+console.log(now.getHours());
+
+console.log(now.getFullYear());
+
+
+/* =========================================================
+   27. RANDOM NUMBER
+========================================================= */
+
+const random = Math.floor(Math.random() * 100);
+
+console.log(random);
+
+
+/* =========================================================
+   28. COPY TEXT
+========================================================= */
+
+navigator.clipboard.writeText("Copied Text");
+
+
+/* =========================================================
+   29. OPEN NEW TAB
+========================================================= */
+
+window.open("https://google.com");
+
+
+/* =========================================================
+   30. SIMPLE ANIMATION
+========================================================= */
+
+const animatedBox = document.createElement("div");
+
+animatedBox.style.width = "100px";
+animatedBox.style.height = "100px";
+animatedBox.style.background = "blue";
+animatedBox.style.position = "absolute";
+
+document.body.appendChild(animatedBox);
+
+let x = 0;
+
+setInterval(() => {
+
+    x++;
+
+    animatedBox.style.left = x + "px";
+
+}, 10);
+
+
+
+
+
+
+
+
+
