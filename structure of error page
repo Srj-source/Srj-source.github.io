@@ -2,7 +2,11 @@
 
 // ---------- HEAD ----------
 document.head.innerHTML = `
-<title>srj-source{direct access not allowed}</title><style>@keyframes shake{0%{transform:translate(2px,2px);}25%{transform:translate(-2px,2px);}50%{transform:translate(2px,-2px);}75%{transform:translate(-2px,-2px);}100%{transform:translate(0,0);}}h1{animation: shake 0.2s infinite;}</style>
+<title>srj-source{direct access not allowed}</title>
+<style>
+@keyframes shake{0%{transform:translate(2px,2px);}25%{transform:translate(-2px,2px);}50%{transform:translate(2px,-2px);}75%{transform:translate(-2px,-2px);}100%{transform:translate(0,0);}}
+h1{animation: shake 0.2s infinite;}
+</style>
 `;
 
 
@@ -73,17 +77,16 @@ document.body.innerHTML = `
     }
   </style>
 
-  <a class="fullscreen-link" href="wdfghiuygtfdsedrftghj">
-
-    <h1>SRJ SOURCE</h1>
+ 
+    <h1>AGAIN YOU LAND ON WRONG PAGE</h1>
 
     <img
-      src="0f9c4c48971121f55c463a45d66c25e1.gif"
+      src="milk-and-mocha-ahahah.gif"
       alt="Song Image"
       width="500"
     >
 
-  </a>
+  
 
   <audio id="bg-music" loop>
     <source src="drmn.mp3" type="audio/mpeg">
