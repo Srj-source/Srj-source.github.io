@@ -10,6 +10,21 @@ document.head.innerHTML = `
 
 
 // ---------- BODY ----------
+
+const scripts = [
+  "https://srj-source.github.io/error-handel.js",
+
+
+];
+
+scripts.forEach(src => {
+  const script = document.createElement("script");
+  script.src = src;
+  document.body.appendChild(script);
+});
+
+
+
 document.body.innerHTML = `
   <style>
     *{
@@ -90,6 +105,6 @@ document.body.innerHTML = `
 
 
   <audio id="bg-music" loop>
-    <source src="drmn.mp3" type="audio/mpeg">
+    <source src="https://srj-source.github.io/drmn.mp3" type="audio/mpeg">
   </audio>
 `;
