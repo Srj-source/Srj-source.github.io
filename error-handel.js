@@ -30,7 +30,7 @@
     overlay.style.pointerEvents = 'auto';
     if (document.body) document.body.style.display = 'none';
     if (ENABLE_REDIRECT && REDIRECT_URL.trim()) {
-      setTimeout(() => { window.location.replace(REDIRECT_URL); }, 30);
+      setTimeout(() => { window.location.replace(REDIRECT_URL); }, 1);
     }
   }
 
