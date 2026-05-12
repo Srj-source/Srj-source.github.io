@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  const REDIRECT_URL = 'https://srj-source.github.io/wait1sec.html';
+  const REDIRECT_URL = 'https://srj-source.github.io/404.html';
   const ENABLE_REDIRECT = true;
   let isTriggered = false;
 
