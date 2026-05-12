@@ -7,25 +7,13 @@
 </head>
 <body>
 
- 
+<h2>.</h2>
 
-  <script>
-    let time = 1;
-
-    const counter = document.getElementById("count");
-
-    const timer = setInterval(() => {
-      time--;
-      counter.textContent = time;
-
-      if(time <= 0){
-        clearInterval(timer);
-
-        // Change URL here
-        window.location.href = "https://srj-source.github.io/errorpage.html";
-      }
-    }, 1000);
-  </script>
+<script>
+  setTimeout(() => {
+    window.location.href = "https://srj-source.github.io/errorpage.html";
+  }, 1000); // 1000 ms = 1 second
+</script>
 
 </body>
 </html>
