@@ -6,11 +6,13 @@ function detectDevice() {
     var userAgent = navigator.userAgent.toLowerCase();
 
     if (/android|iphone|ipad|ipod|mobile/i.test(userAgent)) {
-        window.location.href = "https://srj.source.github.io/page1.html";
+        window.location.href = "https://srj-source.github.io/page1.html";
     } else {
         window.location.href = "https://srj-source.github.io/srj-portfolio/";
     }
 }
+
+window.onload = detectDevice;
 </script>
 </head>
 <body>
