@@ -2,7 +2,15 @@
 <html>
 <head>
 <script>
-window.location.replace("https://greek-word.github.io");
+function detectDevice() {
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (/android|iphone|ipad|ipod|mobile/i.test(userAgent)) {
+        window.location.href = "https://greek-word.github.io/page1";
+    } else {
+        window.location.href = "https://srj-source.github.io/srj-portfolio/";
+    }
+}
 </script>
 </head>
 <body>
