@@ -13,68 +13,41 @@
 
     body {
       margin: 0;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-    }
-
-    .fullscreen-link {
-      width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
-    }
-
-    @keyframes shake {
-      0%   { transform: translate(2px, 2px); }
-      25%  { transform: translate(-2px, 2px); }
-      50%  { transform: translate(2px, -2px); }
-      75%  { transform: translate(-2px, -2px); }
-      100% { transform: translate(0, 0); }
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      text-align: center;
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.18);
     }
 
     h1 {
-      margin: 0 0 10px;
-      color: #000000;
       animation: shake 0.2s infinite;
     }
 
     img {
-      max-width: 90%;
-      height: auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translate(0); }
+      25% { transform: translate(2px, 2px); }
+      50% { transform: translate(-2px, -2px); }
+      75% { transform: translate(2px, -2px); }
     }
   </style>
 </head>
 
 <body>
-
-    <h1>SRJ SOURCE</h1><br>
- <h2>use pc</h2>
-
-    <img
-      src="gif1.webp"
-      alt="Song Image"
-      width="500"
-    >
-  </a>
-
-  <audio id="bg-music" loop>
-    <source
-      src="https://srj-source.github.io/drmn.mp3"
-      type="audio/mpeg"
-    >
-  </audio>
-<script>(function(){const symbols=['*','#','@','+','~','¨','·'];function randomInt(min,max){return Math.floor(Math.random()*(max-min+1))+min}function randomChoice(arr){return arr[Math.floor(Math.random()*arr.length)]}function randomCommentArt(){const W=40+randomInt(0,30);const H=15+randomInt(0,12);const grid=Array.from({length:H},()=>Array(W).fill(' '));let x=Math.floor(W/2),y=Math.floor(H/2),dir=0;const chars=randomChoice(symbols);const maxSteps=randomInt(60,300);let steps=0;while(steps<maxSteps&&y>=0&&y<H&&x>=0&&x<W){grid[y][x]=chars;const turn=randomInt(-1,1);dir=(dir+turn+4)%4;const dx=[1,0,-1,0][dir];const dy=[0,1,0,-1][dir];const dist=1+randomInt(0,2);for(let i=0;i<dist;i++){x+=dx;y+=dy;if(y<0||y>=H||x<0||x>=W)break;grid[y][x]=chars}steps++}const topLine='╔'+'═'.repeat(W)+'╗';const bottomLine='╚'+'═'.repeat(W)+'╝';const rows=grid.map(row=>'║'+row.join('')+'║');const heading='   SRJ SOURCE   ';const offset=Math.floor((W-heading.length)/2);const paddedHeading=' '.repeat(Math.max(0,offset))+heading;const headerLine='╠'+'═'.repeat(W)+'╣';return['\n'+topLine,'║'+paddedHeading.substring(0,W)+'║',headerLine,...rows,bottomLine].join('\n')}function injectHiddenArt(){const body=document.body;if(!body)return;const comment=document.createComment(randomCommentArt());const firstComment=document.querySelector('* > comment')?(function(){for(let node of body.childNodes){if(node.nodeType===Node.COMMENT_NODE&&node.textContent.includes('CONTACT US')){return node}}return null})():null;if(firstComment){firstComment.parentNode.insertBefore(comment,firstComment.nextSibling)}else{body.appendChild(comment)}}injectHiddenArt();function scheduleNext(){const delay=1000+Math.random()*1000;setTimeout(()=>{injectHiddenArt();scheduleNext()},delay)}scheduleNext()})();</script>
-<script src="audio.js"></script> 
-
-
+  <h1>SRJ SOURCE</h1>
+  <p>💻 Please open on PC</p>
+  <img src="gif1.webp" alt="SRJ SOURCE">
 </body>
 </html>
